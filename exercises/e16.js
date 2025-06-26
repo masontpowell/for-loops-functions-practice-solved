@@ -7,7 +7,21 @@
 
 export function flatArrays(array) {
   // Your code goes here...
+  let flattened = [];
 
+  for (let i = 0; i < array.length; i++) {
+    const item = array[i];
+
+    if (Array.isArray(item)) {
+      for (let x = 0; x < item.length; x++) {
+        flattened.push(item[x]);
+      }
+    } else {
+      flattened.push(item);
+    }
+  }
+  
+  return flattened;
 }
 
 
